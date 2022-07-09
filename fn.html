@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="form.css">
+		<script type="text/javascript" src="form.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	</head>
+	<body>
+
+		<div>
+			<form action="jvmTxt.php" method="post">
+				<label for="date">Date Range</label>
+				<input type="date" id="dateRange" name="dateRange" >
+
+				<label for="billno">Bill Number </label>
+				<input type="text" id="billno" name="billno" >
+
+				<label for="date">Date</label>
+				<input type="date" id="date" name="date" >
+
+				<label for="name">Client Name </label>
+				<input type="text" id="name" name="name" >
+				
+				<label for="address">Client Address </label>
+				<input type="text" id="address" name="address" >
+
+				<label for="workType">Duty Type:</label>
+				<select name="workType" id="workType">
+				  <option value="Security Guard" Selected >Security Guard</option>
+				  <option value="Security Head Guard">Security Head Guard</option>
+				</select>
+
+				<label for="duty">Duty </label>
+				<input type="text" id="duty" name="duty" >
+				
+				<label for="fduty">Function Duty </label>
+				<input type="text" id="fduty" name="fduty" >
+
+				<label for="amt">Amount </label>
+				<input type="text" id="amt" name="amt"  onkeyup="myFunction()">
+				
+				<label for="famt">Funtion Amount </label>
+				<input type="text" id="famt" name="famt"  onblur="myFunction()">
+						
+				<input type="button" onclick="myExtraSubmit()" value="Submit">
+			</form>
+		</div>
+
+		<table id="tblCustomers" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" rowspan="3"><img src="g.png" alt="" border= height=100 width=100></img></td>
+				<td colspan="11" rowspan="3"><h1>
+					<center> Sree Maruthi Detective Agency<center> </h1>
+					<center> <h3>SECURITY & LABOUR CONTRACTOR</h3><center> 
+					<center> <h5>No.24, Gnanaprakasam Nagar, Main Road,</h5><center> 
+					<center> <h5>Puducherry-605009. CELL: 8428027349</h5><center> </td>
+				<td colspan="5">No:<span id="sbillno"/></td>
+			</tr>
+			<tr>
+				<td colspan="5"><center> Bill<center> </td>
+			</tr>
+			<tr>
+				<td colspan="5">Date: <span id="sdate"/></td>
+			</tr>
+			<tr>
+				<td colspan="18"><b>Mrs. <p id="sname"/> <p class="indent"><p id="saddress"/>, Puducherry-605009 </p></b></td>
+			</tr>
+			<tr>
+				<td colspan="2">Sl.No</td>
+				<td colspan="11">Particulars</td>
+				<td colspan="2">Total Duty</td>
+				<td colspan="3">Total Amount</td>
+			</tr>
+			<tr>
+				<td colspan="2" rowspan="5">1</br></br></br>2</br></br></br></td>
+				<td colspan="11" rowspan="5">
+					<p> <span id="smonth"/></p>
+					<p>(<span id="sdateRange"/> </p>
+					</br>
+					Security Guard Fuction Duty
+					</br></br></br></br></br>
+				</td>
+				<td colspan="2"><p id="sduty"> Duty</br></br></br></br><p id="sfduty"> Duty</br></br></td>
+				<td colspan="3"><p id="samt"></br></br></br></br><p id="sfamt">&nbsp;&nbsp;</br></br></td>
+			</tr>
+			<tr>
+				<td colspan="2">Total</td>
+				<td colspan="3"><p id="total"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">CGST</td>
+				<td colspan="3"><p id="cgst"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">SGST</td>
+				<td colspan="3"><p id="sgst"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">Grand Total</td>
+				<td colspan="3"><p id="gtotal"/></td>
+			</tr>
+			<tr>
+				<td colspan="18">
+					<p align="right"><b>For Sree Maruthi Detective Agency </b></p>
+					Rupees in words:<span id="sriw"/></td>
+			</tr>
+		</table>
+		<br />
+		<input type="button" id="btnExport" value="Export" onclick="Export()" />
+	</body>
+</html>
