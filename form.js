@@ -47,7 +47,7 @@ function myExtraSubmit() {
 
 	setDefaultValues();
 
-	document.getElementById('sfduty').innerHTML = fduty;
+	document.getElementById('sfduty').innerHTML = '<br/><br/><br/>' + fduty;
 	document.getElementById('sfamt').innerHTML = famt + '<br/><br/><br/>';
 
 }
