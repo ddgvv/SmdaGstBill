@@ -18,7 +18,7 @@ function myFunction() {
   let a = parseInt(document.getElementById("amt").value);
   let b = parseInt(document.getElementById("famt").value);
   let x = a + b;
-  let gst = Math.ceil( x * 0.09 );
+  let gst = Math.floor( x * 0.09 );
   let gtotal = x + ( 2 * gst );
   document.getElementById('total').innerHTML = x ;
   document.getElementById('cgst').innerHTML = gst ;
@@ -32,7 +32,7 @@ function myFunction() {
 function myCalculate() {
   var x = parseInt(document.getElementById("amt").value);
   console.log(inWords(x));
-  let gst = Math.ceil( x * 0.09 );
+  let gst = Math.floor( x * 0.09 );
   let gtotal = x + ( 2 * gst );
   document.getElementById('total').innerHTML = x ;
   document.getElementById('cgst').innerHTML = gst ;
