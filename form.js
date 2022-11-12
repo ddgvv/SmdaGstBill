@@ -31,15 +31,18 @@ function myFunction() {
 
 function myCalculate() {
   var x = parseInt(document.getElementById("amt").value);
+  var duty = parseInt(document.getElementById("duty").value);
   console.log(inWords(x));
   let gst = Math.floor( x * 0.09 );
   let gtotal = x + ( 2 * gst );
+  let rate = x / duty;
   document.getElementById('total').innerHTML = x ;
+  document.getElementById('rate').innerHTML = rate ;
   document.getElementById('cgst').innerHTML = gst ;
   document.getElementById('sgst').innerHTML = gst ;
   document.getElementById('gtotal').innerHTML = gtotal ;
   document.getElementById('sriw').innerHTML = inWords(gtotal);
-  }
+}
 function myExtraSubmit() {
 	var amt = parseInt(document.getElementById("amt").value);
 	var fduty = document.getElementById("fduty").value;
