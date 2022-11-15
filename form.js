@@ -37,7 +37,7 @@ function myCalculate() {
   let gtotal = x + ( 2 * gst );
   let rate = x / duty;
   document.getElementById('total').innerHTML = x ;
-  document.getElementById('rate').innerHTML = rate ;
+  document.getElementById('rate').innerHTML = rate.toFixed(2); ;
   document.getElementById('cgst').innerHTML = gst ;
   document.getElementById('sgst').innerHTML = gst ;
   document.getElementById('gtotal').innerHTML = gtotal ;
